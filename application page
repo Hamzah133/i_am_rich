@@ -1,0 +1,67 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar:AppBar(
+            leading: BackButton(),
+            title: Text("Send Application"),
+          ),
+          body: Column(
+            children: [
+
+              SizedBox(
+                height: 50,
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: const SizedBox(height: 20,),
+              ),
+              Center(
+                child: DropdownMenu(
+                  hintText:'Choose Institution' ,
+                    width: 300,
+                    dropdownMenuEntries:<DropdownMenuEntry<Color>>[
+                      DropdownMenuEntry(value: Colors.black, label: "Wits"),
+                      DropdownMenuEntry(value: Colors.black, label: "UJ"),
+                      DropdownMenuEntry(value: Colors.black, label: "UP"),
+                    ]
+                ),
+              ),
+              const SizedBox(height: 20),
+              DropdownMenu(
+                  hintText:'Choose Course' ,
+                  width: 300,
+                  dropdownMenuEntries:<DropdownMenuEntry<Color>>[
+                    DropdownMenuEntry(value: Colors.black, label: "Mathematics"),
+                    DropdownMenuEntry(value: Colors.black, label: "English"),
+                    DropdownMenuEntry(value: Colors.black, label: "Life Orientation"),
+                  ]
+              ),
+              // Spacer(
+              // ),
+              SizedBox(
+                height: 70,
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  side: BorderSide(color: Colors.black, width: 1),
+                  fixedSize: Size(298, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
+                ),
+                onPressed: () {},
+                  child: const Text('Apply'),
+              )
+            ],
+          )
+        )
+        )
+  );
+}
